@@ -37,7 +37,7 @@ function getTime()
             document.getElementById("music1").play() 
             console.log("+")
         }
-        if((sec < 10) && (min == 00) && (newHour < 1))
+        if((sec < 6) && (min == 00) && (newHour < 1))
         {
             console.log("here")
             document.getElementById("music1").pause()
