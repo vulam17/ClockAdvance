@@ -37,12 +37,31 @@ svg circle:first-child
     fill:none;
     stroke-linecap:round;
 }
-svg circle:last-child
+svg circle:nth-child(2)
 {
     stroke-width:22px;
     fill:transparent;
     stroke:rgba(245, 245, 245, 0.1);
     stroke-linecap:round;
+}
+div svg:first-child circle:last-child
+{
+    stroke-width:1px;
+    fill:red;
+    stroke:red;
+    box-shadow: 0 0 25px 0 white;
+}
+div svg:nth-child(2) circle:last-child
+{
+    stroke-width:1px;
+    fill:green;
+    stroke:green;
+}
+div svg:last-child circle:last-child
+{
+    stroke-width:1px;
+    fill:blue;
+    stroke:blue;
 }
 #hour
 {
