@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Advance</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>CLOCK</h1>
+    <div id="cont">
+        <div>
+            <svg>
+                <circle id = "hour" cx="50%" cy="50%"></circle>
+                <circle id = "hourbg"cx="50%" cx="50%" cy="50%"></circle>
+            </svg>
+            <svg>
+                <circle id = "min" cx="50%" cy="50%"></circle>
+                <circle id = "minbg" cx="50%" cy="50%"></circle> 
+            </svg>
+            <svg>
+                <circle id = "sec" cx="50%" cy="50%"></circle>
+                <circle id = "secbg" cx="50%" cy="50%"></circle>
+            </svg>
+        </div>
+        <div id="label">
+            <div>
+                <p id = "hourLabel"></p>
+                <p>HOUR</p>
+            </div>
+            <div>
+                <p id = "minLabel"></p>
+                <p>MIN</p>
+            </div>
+            <div>
+                <p id = "secLabel"></p>
+                <p>SEC</p>
+            </div>
+        </div>
+    </div>
+    <p><button onclick="playSound()" id="soundbtn">Sound Off</button></p>
+    <audio id="music1" autoplay loop>
+        <source src="asset/sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="music2" autoplay loop>
+        <source src="asset/newhour.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
