@@ -7,7 +7,7 @@
 }
 body
 {
-    background-color: #000000;
+    background-color: #303030;
 }
 h1
 {
@@ -30,18 +30,18 @@ svg
     width:33.333%;
     height: 100%;
     transform: rotate(-90deg);
+    background-color: transparent;
 }
 svg circle:first-child
 {
-    stroke-width:20px;
+
     fill:none;
     stroke-linecap:round;
 }
 svg circle:nth-child(2)
 {
-    stroke-width:22px;
     fill:transparent;
-    stroke:rgba(245, 245, 245, 0.1);
+    stroke:rgba(254, 254, 254, 0.1);
     stroke-linecap:round;
 }
 div svg:first-child circle:last-child
@@ -49,19 +49,21 @@ div svg:first-child circle:last-child
     stroke-width:1px;
     fill:red;
     stroke:red;
-    box-shadow: 0 0 25px 0 white;
+    filter: drop-shadow(0 0 15px red);
 }
 div svg:nth-child(2) circle:last-child
 {
     stroke-width:1px;
     fill:green;
     stroke:green;
+    filter: drop-shadow(0 0 15px green);
 }
 div svg:last-child circle:last-child
 {
     stroke-width:1px;
     fill:blue;
     stroke:blue;
+    filter: drop-shadow(0 0 15px blue);
 }
 #hour
 {
@@ -125,7 +127,14 @@ button
     outline:none;
     border:none;
 }
-@media screen and (max-width:280px) {
+body>p:last-child
+{
+    color:rgba(255,255,255,0.1);
+    font-size:10px;
+    font-style:italic;
+    font-weight: lighter;
+}
+@media screen and (max-width:250px) {
     #cont>div:first-child
     {
         flex-wrap:wrap;

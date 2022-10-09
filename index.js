@@ -4,11 +4,30 @@ let hourOffset = 0, minOffset = 0, secOffset = 0, r = 0, c = 0, dotHourCX = 0, d
 dotMinCX = 0, dotMinCY = 0, dotMinAlpha = 0,dotSecCX = 0, dotSecCY = 0, dotSecAlpha = 0
 function getTime()
 {
-    r = window.innerWidth * 0.95 * 0.33 * 0.4
+    r = window.innerWidth * 0.33 * 0.4
     document.getElementById("cont").style.height = window.innerWidth * 0.333 + "px"
-    //console.log(Math.sin(Math.PI/2))
-    
-    if(window.innerWidth < 280) 
+    document.getElementById("hour").setAttribute("stroke-width",20)
+    document.getElementById("min").setAttribute("stroke-width",20)
+    document.getElementById("sec").setAttribute("stroke-width",20)
+    document.getElementById("hourbg").setAttribute("stroke-width",22)
+    document.getElementById("minbg").setAttribute("stroke-width",22)
+    document.getElementById("secbg").setAttribute("stroke-width",22)
+    document.getElementById("dothour").setAttribute("r",20)
+    document.getElementById("dotmin").setAttribute("r",20)
+    document.getElementById("dotsec").setAttribute("r",20)
+    if(window.innerWidth < 500) 
+    {
+        document.getElementById("hour").setAttribute("stroke-width",10)
+        document.getElementById("min").setAttribute("stroke-width",10)
+        document.getElementById("sec").setAttribute("stroke-width",10)
+        document.getElementById("hourbg").setAttribute("stroke-width",12)
+        document.getElementById("minbg").setAttribute("stroke-width",12)
+        document.getElementById("secbg").setAttribute("stroke-width",12)
+        document.getElementById("dothour").setAttribute("r",10)
+        document.getElementById("dotmin").setAttribute("r",10)
+        document.getElementById("dotsec").setAttribute("r",10)
+    }
+    if(window.innerWidth < 250) 
     {
         document.getElementById("cont").style.height = window.innerWidth * 3 + "px"
         r = window.innerWidth * 0.4
@@ -33,21 +52,30 @@ function getTime()
     dotHourAlpha = (2 * Math.PI/24) * hour
     dotHourCX = window.innerWidth / 6 + Math.cos(dotHourAlpha) * r
     dotHourCY = window.innerWidth / 6 + Math.sin(dotHourAlpha) * r
-    document.getElementById("dothour").setAttribute("cx",dotHourCX)
-    document.getElementById("dothour").setAttribute("cy",dotHourCY)
 
     dotMinAlpha = (2 * Math.PI/60) * min
     dotMinCX = window.innerWidth / 6 + Math.cos(dotMinAlpha) * r
     dotMinCY = window.innerWidth / 6 + Math.sin(dotMinAlpha) * r
-    document.getElementById("dotmin").setAttribute("cx",dotMinCX)
-    document.getElementById("dotmin").setAttribute("cy",dotMinCY)
 
     dotSecAlpha = (2 * Math.PI/60) * sec
     dotSecCX = window.innerWidth / 6 + Math.cos(dotSecAlpha) * r
     dotSecCY = window.innerWidth / 6 + Math.sin(dotSecAlpha) * r
+
+    if(window.innerWidth < 250) 
+    {
+        dotHourCX = window.innerWidth / 2 + Math.cos(dotHourAlpha) * r
+        dotHourCY = window.innerWidth / 2 + Math.sin(dotHourAlpha) * r 
+        dotMinCX = window.innerWidth / 2 + Math.cos(dotMinAlpha) * r
+        dotMinCY = window.innerWidth / 2 + Math.sin(dotMinAlpha) * r 
+        dotSecCX = window.innerWidth / 2 + Math.cos(dotSecAlpha) * r
+        dotSecCY = window.innerWidth / 2 + Math.sin(dotSecAlpha) * r
+    }
+    document.getElementById("dothour").setAttribute("cx",dotHourCX)
+    document.getElementById("dothour").setAttribute("cy",dotHourCY)
+    document.getElementById("dotmin").setAttribute("cx",dotMinCX)
+    document.getElementById("dotmin").setAttribute("cy",dotMinCY)
     document.getElementById("dotsec").setAttribute("cx",dotSecCX)
     document.getElementById("dotsec").setAttribute("cy",dotSecCY)
-
 
     hourOffset = c - (hour * (c/24))
     minOffset = c - (min * (c/60))
